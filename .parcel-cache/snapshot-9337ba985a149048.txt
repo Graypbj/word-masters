@@ -1,0 +1,14 @@
+13
+87/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/index.html1749072944725268891 0
+86/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/style.css1749075584671337145 0
+106/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.90b3112b.js1749076520358882255 0
+110/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.3464ddca.js.map1749076520369318397 0
+92/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/index.html1749076520358882255 0
+107/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.3a01df49.css1749076520348446116 0
+92/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/word-masters.js1749075512787628102 0
+106/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.3464ddca.js1749076520369318397 0
+111/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.3a01df49.css.map1749076520369318397 0
+81/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist1749076520369318397 1
+86/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/README.md1749073847742185766 0
+110/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters/dist/word_masters.90b3112b.js.map1749076520369318397 0
+76/home/graylegocity/workspace/github.com/Graypbj/frontendmasters/word_masters1749076520327573832 1
