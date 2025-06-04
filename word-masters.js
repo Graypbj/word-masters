@@ -1,16 +1,20 @@
 const letters = document.querySelectorAll('.scoreboard-letter');
 const loadingDiv = document.querySelector('.info-bar');
 const ANSWER_LENGTH = 5;
+const ROUNDS = 6;
 
 async function init() {
 	let currentGuess = '';
 	let currentRow = 0;
+	let isLoading = true;
 
 	const res = await fetch("https://words.dev-apis.com/word-of-the-day");
 	const resObj = await res.json();
 	const word = resObj.word.toUpperCase();
 	const wordParts = word.split("");
+	let done = false;
 	setLoading(false);
+	isLoading = false;
 
 	console.log(word);
 
@@ -29,9 +33,9 @@ async function init() {
 			return;
 		}
 
+
 		// TODO: Validate the word
 
-		// TODO: Do all the marking as correct, close, or wrong
 		const guessParts = currentGuess.split("");
 		const map = makeMap(wordParts);
 		console.log(map);
@@ -40,22 +44,32 @@ async function init() {
 			// Mark as correct
 			if (guessParts[i] === wordParts[i]) {
 				letters[currentRow * ANSWER_LENGTH + i].classList.add("correct");
+				map[guessParts[i]]--;
 			}
 		}
 
 		for (let i = 0; i < ANSWER_LENGTH; i++) {
 			if (guessParts[i] === wordParts[i]) {
 				// do nothing, we already did it
-			} else if (wordParts.includes(guessParts[i])) { // TODO: Make this more accurate
+			} else if (wordParts.includes(guessParts[i]) && map[guessParts[i]] > 0) {
 				letters[currentRow * ANSWER_LENGTH + i].classList.add("close");
+				map[guessParts[i]]--;
 			} else {
 				letters[currentRow * ANSWER_LENGTH + i].classList.add("wrong");
 			}
 		}
 
-		// TODO: Did they win or lose?
-
 		currentRow++;
+
+		if (currentGuess === word) {
+			alert("you win!");
+			done = true;
+			return;
+		} else if (currentRow === ROUNDS) {
+			alert(`you lose, the word was ${word}`);
+			done = true;
+		}
+
 		currentGuess = '';
 	}
 
@@ -65,6 +79,10 @@ async function init() {
 	}
 
 	document.addEventListener('keydown', function handleKeyPress(event) {
+		if (done || isLoading) {
+			return;
+		}
+
 		const action = event.key
 
 		if (action === 'Enter') {
@@ -96,6 +114,7 @@ function makeMap(array) {
 			obj[letter] = 1;
 		}
 	}
+	return obj;
 }
 
 init();
